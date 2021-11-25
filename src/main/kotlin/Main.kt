@@ -39,7 +39,7 @@ fun main() {
 }
 
 fun getPrices() {
-    var wait = true
+    var wait = false
     object : WebSocketClient(URI("wss://market.arzpaya.com/signalr/connect?transport=webSockets&clientProtocol=1.5&&connectionToken=AQAAANCMnd8BFdERjHoAwE%2FCl%2BsBAAAAHj4j9Alz4ECxVTti7D9fVgAAAAACAAAAAAAQZgAAAAEAACAAAAAnvjFQqIl4ksTHnf2Mw2RImL7JlMrlEA%2FU%2FvXd5fqOmwAAAAAOgAAAAAIAACAAAACcnxGt6G6q3XxYohzTLbMr2CMbRG0C0UKQ6QYJQEtHhTAAAAC6SMTW%2FOlA0n0FWze7j9q0u5EOU5dgO9NL4jZshKfqGJ2%2F9SOPBhg8P%2FSXSV5yo2hAAAAAHCuLBwdxrPIxAl7GlXv5APRs1DMVKCshQuBdrJ5EAYKN2xQlZ4MNSY%2FJ9ljNr4qfxJSrRbgrYvl8xBrr5ItSTg%3D%3D&connectionData=%5B%7B%22name%22%3A%22orderhub%22%7D%5D&tid=5")) {
         override fun onOpen(handshakedata: ServerHandshake?) {
             this.send("""{"H":"orderhub","M":"GetExchangeChangesInit","A":["f6fe6cc5-657e-4463-a3fc-26e514a3ed92"],"I":0}""")
